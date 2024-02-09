@@ -13,11 +13,11 @@ module ApplicationHelper
 
   # Wrap view with <%= modal do %> ... <% end %> to have it open in a modal
   # Make sure to add data-turbo-frame="modal" to the link/button that opens the modal
-  def modal(height: "max-h-[350px]", width: "max-w-[580px]", &block)
-    render "shared/modal", height: height, width: width, &block
+  def modal(height: "max-h-[556px]", width: "max-w-[580px]", modal_classes: "", &block)
+    render "shared/modal", height: height, width: width, modal_classes: modal_classes, &block
   end
 
-  def dropdown(f: nil, options: [], &block)
-    render "shared/dropdown", f: f, options: options, &block
+  def currency_dropdown(currency: nil, options: [], &block)
+    render "shared/currency_dropdown", currency: currency, options: options, &block
   end
 end

@@ -1,5 +1,5 @@
 <%= turbo_frame_tag "modal" do %>
-  <dialog class="bg-white border border-[#141414]/25 rounded-2xl <%= height %> <%= width %> w-full shadow-xs overflow-visible" data-controller="modal" data-action="click->modal#click_outside">
+  <dialog class="<%= modal_classes %> bg-white border border-[#141414]/25 rounded-2xl <%= height %> <%= width %> w-full shadow-xs" data-controller="modal" data-action="click->modal#click_outside">
     <div class="flex flex-col h-full overflow-y-visible">
       <%= yield %>
     </div>
