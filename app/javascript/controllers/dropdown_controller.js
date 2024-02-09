@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="dropdown"
 export default class extends Controller {
-  static targets = ["menu"]
+  static targets = ["menu", "input"]
 
   toggleMenu(event) {
     event.stopPropagation(); // Prevent event from closing the menu immediately
@@ -19,5 +19,13 @@ export default class extends Controller {
 
   disconnect() {
     document.removeEventListener("click", this.hideMenu);
+  }
+
+  selectOption (e) {
+    const value = e.target.getAttribute('data-value');
+
+    if (value) {
+      this.inputTarget.value = value
+    }
   }
 }
